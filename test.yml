@@ -1,0 +1,17 @@
+config:
+  target: "wss://ws-t.bitadata.com/"
+  phases:
+    - duration: 50
+      arrivalRate: 30
+  ws:
+    # Set WebSocket subprotocols:
+    headers:
+       api_key: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOnsiaWQiOiI2OSIsImFjY2VzcyI6dHJ1ZSwidHlwZSI6ImZ1bGwiLCJsaW1pdCI6MCwiZW1haWwiOmZhbHNlLCJuYW1lIjoiTWlndWVsIE1lbmRvemEiLCJjb21wYW55IjoiQklUQSIsInVzZXJuYW1lIjoibW1lbmRvemEifSwiaWF0IjoxNjYxODY4MTM5LCJleHAiOjE2NjE5NTQ1Mzl9.Ly_vOJf8_6lJE4fNbSeHzXoOb4uC6rePt36S7OXSvnU"
+
+scenarios:
+  - name: My WebSocket test
+    engine: "ws" # Enable the Socket.io engine
+    flow:
+      - send: "{event\": \"subscribe\",\"channel\":\"live\",\"id\":\"B10\"}"
+
+      
